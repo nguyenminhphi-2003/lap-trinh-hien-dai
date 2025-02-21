@@ -1,10 +1,9 @@
 {
   "name": "todolist",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon src/app.js"
+    "to-do-list": "npx nodemon src/to-do-list/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.12.0",
