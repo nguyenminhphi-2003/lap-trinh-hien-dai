@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "to-do-list": "npx nodemon src/to-do-list/app.js",
-    "chat-ws": "node src/chat-websocket/server.cjs"
+    "chat-ws": "node src/chat-websocket/server.js"
   },
   "repository": {
     "type": "git",
