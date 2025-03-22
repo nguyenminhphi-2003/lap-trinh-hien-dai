@@ -4,7 +4,7 @@ import { google } from "googleapis";
 import fs from "fs";
 
 // Đọc và parse file JSON
-const credentials = JSON.parse(fs.readFileSync('./credential.json', 'utf-8'));
+const credentials = JSON.parse(fs.readFileSync('./credentialGGDRIVE.json', 'utf-8'));
 
 const auth = new google.auth.GoogleAuth({
     credentials,
