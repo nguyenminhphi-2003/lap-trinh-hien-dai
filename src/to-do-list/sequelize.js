@@ -2,8 +2,9 @@ import { Sequelize, DataTypes } from 'sequelize';
 import UserModel from './models/userModel.js';
 import TaskModel from './models/taskModel.js';
 
-const sequelize = new Sequelize('todolist', 'root', '12345', {
-  host: '172.25.48.1',
+const sequelize = new Sequelize('todolist', 'root', 'abc12345', {
+  host: '127.0.0.1',
+  port: 3306,
   dialect: 'mysql',
   logging: false,
 });
