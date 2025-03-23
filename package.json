@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "to-do-list": "npx nodemon src/to-do-list/app.js"
+    "to-do-list": "npx nodemon src/to-do-list/app.js",
+    "chat-ws": "node src/chat-websocket/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "morgan": "^1.10.0",
     "mysql2": "^3.14.0",
     "prettier": "^3.5.1",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
