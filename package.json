@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "to-do-list": "npx nodemon src/to-do-list/app.js",
-    "chat-ws": "node src/chat-websocket/server.js"
+    "chat-ws": "node src/chat-websocket/server.js",
+    "dev": "vite"
   },
   "repository": {
     "type": "git",
@@ -28,9 +29,14 @@
     "mysql2": "^3.14.0",
     "prettier": "^3.5.1",
     "sequelize": "^6.37.5",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "mongoose": "^8.12.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
-  }
+    "nodemon": "^3.1.9",
+    "vite": "^5.2.2",
+    "vite-plugin-node": "^4.0.0"
+  },
+  "main": "index.js",
+  "keywords": []
 }
