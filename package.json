@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "to-do-list": "npx nodemon src/to-do-list/app.js",
-    "chat-ws": "node src/chat-websocket/server.js"
+    "start": "npx nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "googleapis": "^148.0.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
     "mysql2": "^3.14.0",
     "prettier": "^3.5.1",
     "sequelize": "^6.37.5",

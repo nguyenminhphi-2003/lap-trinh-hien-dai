@@ -1,10 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
 import weatherRoutes from './weather.js';
-
-dotenv.config({ path: './.env' });
 
 const app = express();
 
