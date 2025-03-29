@@ -1,22 +1,20 @@
-import express from "express";
+import { Router } from "express";
 import multer from "multer";
 import { google } from "googleapis";
 import fs from "fs";
 
-// Đọc và parse file JSON
-const credentials = JSON.parse(fs.readFileSync('./credentialGGDRIVE.json', 'utf-8'));
+const credentials = JSON.parse(fs.readFileSync('./src/upload-file/credentialGGDRIVE.json', 'utf-8'));
 
 const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/drive.file'],
 });
 
-const app = express();
-const PORT = 3000;
+const router = Router();
 
 const uploadDrive = multer({ dest: 'uploads/' });
 
-app.post('/uploadDrive', uploadDrive.single('file'), async (req, res) => {
+router.post('/uploadDrive', uploadDrive.single('file'), async (req, res) => {
     const { file } = req;
     const drive = google.drive({ version: 'v3', auth });
     const folderId = '1bf0iLUEi1d9mfqQICQblqs7Sbo12nPuk';  // Thay bằng ID thư mục Google Drive của bạn
@@ -46,7 +44,7 @@ app.post('/uploadDrive', uploadDrive.single('file'), async (req, res) => {
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads')
+        cb(null, './src/upload-file/uploads')
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
@@ -56,7 +54,7 @@ const storage = multer.diskStorage({
 
 const uploadLocal = multer({ storage: storage })
 
-app.post('/uploadLocal', uploadLocal.single('file'), (req, res) => {
+router.post('/uploadLocal', uploadLocal.single('file'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: "File upload failed" });
     }
@@ -65,7 +63,4 @@ app.post('/uploadLocal', uploadLocal.single('file'), (req, res) => {
     });
 })
 
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+export default router;
