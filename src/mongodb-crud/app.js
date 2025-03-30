@@ -15,6 +15,3 @@ connectDB("mongodb+srv://root:12345@lap-trinh-hien-dai.n0j6pdw.mongodb.net/?retr
 
 app.use('/products', productRouter)
 
-app.listen(3000, () => {
-    console.log(`Server is running on port 3000`)
-});
