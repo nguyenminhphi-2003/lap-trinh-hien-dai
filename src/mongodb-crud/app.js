@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"))
 
-connectDB("mongodb+srv://root:BACmcS7ITTmJrAdX@cluster0.or998.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+connectDB("")
 
 app.use('/products', productRouter)
 
